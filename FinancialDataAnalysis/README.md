@@ -1,20 +1,17 @@
-# AI Crew for Stock Analysis
+# Gen AI for Stock Analysis
 ## Introduction
-This project is an example using the CrewAI framework to automate the process of analyzing a stock. CrewAI orchestrates autonomous AI agents, enabling them to collaborate and execute complex tasks efficiently.
+This project is an example using the GenAI framework to automate the process of analyzing a stock. LLM's orchestrates autonomous AI agents, enabling them to collaborate and execute complex tasks efficiently.
 
-By [@joaomdmoura](https://x.com/joaomdmoura)
+<a href="https://www.linkedin.com/in/gyaneshwer-kumar-4573b64b/"><img src="https://img.shields.io/badge/Follow%20Gyanesh-blue.svg?logo=linkedin"></a>
 
-- [CrewAI Framework](#crewai-framework)
+- [Agent Framework](#agent-framework)
 - [Running the script](#running-the-script)
 - [Details & Explanation](#details--explanation)
 - [Using GPT 3.5](#using-gpt-35)
 - [Using Local Models with Ollama](#using-local-models-with-ollama)
-- [Contributing](#contributing)
-- [Support and Contact](#support-and-contact)
-- [License](#license)
 
-## CrewAI Framework
-CrewAI is designed to facilitate the collaboration of role-playing AI agents. In this example, these agents work together to give a complete stock analysis and investment recommendation
+## Agent Framework
+This Afent Ftanework is designed to facilitate the collaboration of role-playing AI agents. In this example, these agents work together to give a complete stock analysis and investment recommendation
 
 ## Running the Script
 It uses GPT-4 by default so you should have access to that to run it.
@@ -30,12 +27,11 @@ not to, and by doing so it will cost you money.*
 - **Running the Script**: Execute `python main.py`` and input the company to be analyzed when prompted. The script will leverage the CrewAI framework to analyze the company and generate a detailed report.
 - **Key Components**:
   - `./main.py`: Main script file.
-  - `./stock_analysis_tasks.py`: Main file with the tasks prompts.
-  - `./stock_analysis_agents.py`: Main file with the agents creation.
-  - `./tools`: Contains tool classes used by the agents.
+  - `./datafetch.py`: Main file that fetches earing call transcript data.
+  - `./llm.py`: Main file with the agents creation.
 
 ## Using GPT 3.5
-CrewAI allow you to pass an llm argument to the agent construtor, that will be it's brain, so changing the agent to use GPT-3.5 instead of GPT-4 is as simple as passing that argument on the agent you want to use that LLM (in `main.py`).
+Agents allow you to pass an llm argument to the agent construtor, that will be it's brain, so changing the agent to use GPT-3.5 instead of GPT-4 is as simple as passing that argument on the agent you want to use that LLM (in `main.py`).
 ```python
 from langchain.chat_models import ChatOpenAI
 
@@ -66,7 +62,7 @@ The CrewAI framework supports integration with local models, such as Ollama, for
 
 ### Setting Up Ollama
 - **Install Ollama**: Ensure that Ollama is properly installed in your environment. Follow the installation guide provided by Ollama for detailed instructions.
-- **Configure Ollama**: Set up Ollama to work with your local model. You will probably need to [tweak the model using a Modelfile](https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md), I'd recommend adding `Observation` as a stop word and playing with `top_p` and `temperature`.
+- **Configure Ollama**: Set up Ollama to work with your local model.
 
 ### Integrating Ollama with CrewAI
 - Instantiate Ollama Model: Create an instance of the Ollama model. You can specify the model and the base URL during instantiation. For example:
