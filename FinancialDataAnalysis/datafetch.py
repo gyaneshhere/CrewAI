@@ -6,7 +6,7 @@ import json
 import requests
 import os
 
-fmp_api ="nFsTfO4nRCRzj55JowUWkCPc56gCX0gc"
+fmp_api= os.env.get("fmp_api_key")
 
 def get_jsonparsed_data(url):
     response = requests.get(url, verify=certifi.where())
